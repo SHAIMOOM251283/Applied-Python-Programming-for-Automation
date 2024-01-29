@@ -1,0 +1,97 @@
+- /home/user/documents/
+  - project/
+    - index.html
+  - images/
+    - picture.jpg
+  - styles/
+    - style.css
+
+styles/style.css #path is relative to the current working directory, which is /home/user/documents/
+/home/user/documents/styles/style.css #absolute path
+
+E:\LEARNING PYTHON\AUTOMATE THE BORING STUFF\8. READING AND WRITING FILES\myCats.py
+#An absolute path starts with the root directory of the file system.
+
+import os
+current_directory = os.getcwd()
+print("Current Working Directory:", current_directory)
+#This code snippet prints the absolute path of the current working directory.
+
+import os
+new_directory = '/path/to/new/directory'
+os.chdir(new_directory)
+#The os.chdir() function is used to change the current working directory to the specified path.
+
+'.' (Dot):
+#The single dot (.) represents the current directory.
+
+.. (Dot-Dot):
+#The double dot (..) represents the parent directory. When used in a file path, it refers to the directory one level up in the hierarchy. 
+#For example, if you are in the directory /home/user/documents, then .. refers to /home/user.
+
+#In the path C:\bacon\eggs\spam.txt:
+  #The directory name (dir name) is C:\bacon\eggs.
+  #The base name is spam.txt.
+
+Read Mode ('r'):
+    This is the default mode if no mode is specified. It is used for reading the contents of a file.
+    Example: open('filename.txt', 'r')
+Write Mode ('w'):
+    This mode is used for writing to a file. 
+    If the file already exists, it will be truncated (emptied), and if the file doesn't exist, a new file will be created.
+    Example: open('filename.txt', 'w')
+Append Mode ('a'):
+    This mode is used for appending data to the end of a file. If the file does not exist, a new file will be created.
+    Example: open('filename.txt', 'a')
+
+# Read mode
+with open('example.txt', 'r') as file:
+    content = file.read()
+    print(content)
+# Write mode
+with open('output.txt', 'w') as file:
+    file.write('Hello, World!')
+# Append mode
+with open('log.txt', 'a') as file:
+    file.write('An entry in the log.')
+
+If an existing file is opened in write mode ('w') in Python, the file is truncated, meaning that its existing content is deleted, 
+and the file is treated as empty. 
+If the file does not exist, a new file is created. 
+
+# Existing file content: "Existing content\n"
+filename = 'example.txt'
+# Opening an existing file in write mode
+with open(filename, 'w') as file:
+    file.write('New content\n')  # The existing content is overwritten
+# The content of 'example.txt' is now 'New content\n'
+
+#The read() method is used to read the entire content of a file as a single string.
+with open('example.txt', 'r') as file:
+    content = file.read()
+    print(content)
+
+#The readlines() method is used to read all the lines of a file and return them as a list of strings.
+with open('example.txt', 'r') as file:
+    lines = file.readlines()
+    print(lines)
+
+    #read() reads the entire content of the file as a single string.
+    #readlines() reads all lines of the file and returns them as a list of strings.
+
+#In Python, the shelve module provides a way to store and retrieve Python objects using a dictionary-like interface.
+#When you use shelve to create a persistent storage file, the resulting data structure resembles a dictionary. 
+#The shelve module essentially provides a dictionary-like interface for storing and retrieving objects, 
+and it uses underlying database implementations (such as dbm or sqlite) to manage the data persistently.
+
+import shelve
+# Creating a shelf file
+with shelve.open('myshelf') as shelf:
+    shelf['name'] = 'John'
+    shelf['age'] = 30
+    shelf['city'] = 'Example City'
+# Accessing the shelf file
+with shelve.open('myshelf') as shelf:
+    print(shelf['name'])
+    print(shelf['age'])
+    print(shelf['city'])
