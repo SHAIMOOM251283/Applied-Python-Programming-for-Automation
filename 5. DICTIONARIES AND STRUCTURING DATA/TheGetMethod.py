@@ -1,0 +1,7 @@
+picnicItems = {'apples': 5, 'cups': 2}
+
+print('I am bringing ' + str(picnicItems.get('cups', 0)) + ' cups.')
+
+print('I am bringing ' + str(picnicItems.get('eggs', 0)) + ' eggs.')
+
+#print('I am bringing ' + str(picnicItems['eggs']) + ' eggs.') #Without using get(), the code would have caused an error message.
