@@ -1,0 +1,23 @@
+<strong>Hello</strong> World!
+
+Al's free <a href="http://inventwithpython.com">Python books</a>.
+
+You’ll need to look at the HTML source of the web pages that your programs will work with. 
+To do this, right-click any web page in your web browser, and select View Source or View page source to see the HTML text of the page.
+
+In Chrome and Internet Explorer for Windows you can press F12 to make them appear. Pressing F12 again will make the developer tools disappear.
+
+In Firefox, you can bring up the Web Developer Tools Inspector by pressing ctrl-shift-C on Windows.
+
+You can right-click any part of the web page and select Inspect Element from the context menu to bring up the HTML responsible for that part of the page. 
+
+To write a program to pull weather forecast data from http://weather.gov/ :
+* search for the 94105 ZIP code
+* to scrap the temperature information for that ZIP code 
+* right-click where it is on the page
+* select Inspect Element
+* the HTML responsible for the temperature part of the web page is <p class="myforecast-current-lrg">57°F</p>
+* the temperature information is contained inside a <p> element with the myforecast-current-lrg class
+* the BeautifulSoup module will help you find it in the string
+
+Parse: analyze and identify the parts of an HTML file on the hard drive
