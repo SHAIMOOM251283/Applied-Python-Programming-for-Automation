@@ -1,0 +1,4 @@
+Hello world!
+XYab
+$
+In IDLE, Alt-3 comments out a line.
