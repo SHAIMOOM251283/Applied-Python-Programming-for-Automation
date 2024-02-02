@@ -12,7 +12,7 @@ def perform_tasks():
     # Click on the search field
     pyautogui.click(470, 146)
 
-    # Type "shaimoom" in the search field
+    # Type "name_of_recipient" in the search field
     type_with_delay("name_of_recipient")
 
     # Press the down arrow twice
